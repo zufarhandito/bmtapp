@@ -1,6 +1,7 @@
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { BookmarkIcon } from '@heroicons/react/24/solid';
-import { Typography } from '@material-tailwind/react';
-import React from 'react'
+import { Button, Typography } from '@material-tailwind/react';
+import { motion } from "framer-motion"
 
 type Props = {}
 
@@ -41,7 +42,23 @@ export default function Announcement({}: Props) {
             </Typography>
             {
                 Announcements.map((item,index)=>(
-                    <div className='bg-blue-gray-50 px-7 py-4 rounded-md relative'>
+                    <motion.a
+                    href=''
+                    initial={{
+                        x: 200,
+                        opacity:0
+                    }}
+                    whileInView={{
+                        x: 0,
+                        opacity: 1
+                    }}
+                    viewport={{
+                        once: true
+                    }}
+                    transition={{
+                        duration: index / 9
+                    }}
+                    className='bg-blue-gray-50 px-7 py-4 rounded-md relative'>
                         {item.isPinned? <span> <BookmarkIcon className='h-6 w-6 absolute start-0 top-0 text-yellow-700 '/> </span>:'' }
                         <Typography variant='small' className='text-blue-gray-600'>
                             {item.date}
@@ -49,9 +66,13 @@ export default function Announcement({}: Props) {
                         <Typography variant='h6' className='font-semibold'>
                             {item.title}
                         </Typography>
-                    </div>
+                    </motion.a>
                 ))
             }
+            <Button className='w-fit mx-auto my-5' variant='text'>
+                Lihat Lainnya
+                <ChevronDownIcon className='w-5 h-5 mx-auto'/>
+            </Button>
         </article>
     </section>
   )
