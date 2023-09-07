@@ -94,7 +94,9 @@ export default function Article({}: Props) {
                 </div>
                 {
                     articleData.slice(1,4).map((item,index)=>(
-                        <ArticleCard articleData={articleData[index]}/>
+                        <span key={index}>
+                            <ArticleCard articleData={articleData[index]}/>
+                        </span>
                     ))
                 }
             </div>

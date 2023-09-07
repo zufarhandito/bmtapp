@@ -43,6 +43,7 @@ export default function Announcement({}: Props) {
             {
                 Announcements.map((item,index)=>(
                     <motion.a
+                    key={index}
                     href=''
                     initial={{
                         x: 200,
