@@ -56,8 +56,7 @@ export function MyFooter() {
               variant="small"
               className="mb-4 text-center font-normal text-white md:mb-0"
             >
-              &copy; {currentYear} <a href="https://material-tailwind.com/">Material Tailwind</a>. All
-              Rights Reserved.
+              &copy; {currentYear} BMT Amanah Galur
             </Typography>
             <div className="flex gap-4 text-white sm:justify-center">
               <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">

@@ -187,33 +187,33 @@ function NavList() {
 }
  
 export function MyNavbar() {
+  const [isMobile, setIsMobile] = React.useState(false);
   const [openNav, setOpenNav] = React.useState(false);
  
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    const handleResize = () => {
+      if (window.innerWidth >= 960) {
+        setOpenNav(false);
+        setIsMobile(false);
+      } else {
+        setOpenNav(false);
+        setIsMobile(true);
+      }
+    };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
   }, []);
+
+  console.log(isMobile)
  
   return (
-    <Navbar className="rounded-none absolute px-4 py-2 shadow-none z-50 border-none bg-hero-100"   >
+    <Navbar className="rounded-none absolute px-4 py-2 shadow-none z-50 border-none backdrop-blur-xl lg:backdrop-blur-0 " color="transparent" >
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="flex">
-            {/* <Image alt="logo_koperasi" src="/koperasi_logo.png" width={45} height={30} ></Image> */}
-            {/* <div>
-                <Typography
-                    as="a"  
-                    href="#"
-                    variant="h6"
-                    className="mr-4 cursor-pointer"
-                    >
-                    BMT Amanah
-                </Typography>
-                <Typography variant="small">
-                    Kranggan
-                </Typography>
-            </div> */}
         </div>
         <div className="hidden lg:block">
           <NavList />
