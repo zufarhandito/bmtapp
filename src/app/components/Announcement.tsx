@@ -35,7 +35,7 @@ const Announcements = [
 export default function Announcement({}: Props) {
   return (
     <section>
-        <article className='flex flex-col gap-3 max-w-3xl mx-auto my-44'>
+        <article className='flex flex-col gap-3 max-w-3xl mx-auto my-44 px-8 lg:px-0'>
             <Typography variant='h4' className='text-center mb-4'>
                 Pengumuman
             </Typography>

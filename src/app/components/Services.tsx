@@ -35,9 +35,18 @@ const ServicesData: ServiceType[] = [
 
 export default function Services({}: Props) {
   return (
-    <div className='-z-20 bg-hero-100 px-40 py-14 relative flex gap-14'>
+    <div className='-z-20 bg-hero-100 px-8 lg:px-40 py-14 relative flex flex-col lg:flex-row gap-14'>
+        <div className='absolute bg-hero-50 h-80 w-80 start-0 bottom-0 rounded-tr-full -z-10'></div>
         <div className='-z-10 bg-gradient-to-tr from-hero-100 to-blue-900 absolute right-0 bottom-0 h-full w-1/2 rounded-tl-full rounded-bl-full'></div>
-        <div className='w-3/5 grid grid-cols-2 gap-4'>
+        <div className='lg:w-2/5 text-white my-auto lg:text-right'>
+            <Typography variant='h4' className='mb-2'>
+                Layanan
+            </Typography>
+            <Typography>
+                BMT Amanah menyediakan berbagai layanan untuk melayani masyarakat. Kami berkomitmen untuk terus meningkatkan pelayanan publik sebagai bentuk..
+            </Typography>
+        </div>
+        <div className='w-full lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-4'>
             {
                 ServicesData.map((item,index) => (
                     <Card key={index} className="shadow-none rounded-md">
@@ -56,14 +65,6 @@ export default function Services({}: Props) {
                     </Card>
                 ))
             }
-        </div>
-        <div className='w-2/5 text-white my-auto'>
-            <Typography variant='h4' className='mb-2'>
-                Layanan
-            </Typography>
-            <Typography>
-                BMT Amanah menyediakan berbagai layanan untuk melayani masyarakat. Kami berkomitmen untuk terus meningkatkan pelayanan publik sebagai bentuk..
-            </Typography>
         </div>
     </div>
   )

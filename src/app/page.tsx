@@ -12,13 +12,27 @@ export default function Home() {
   return (
     <main>
       <MyNavbar/>
-      <Hero/>
-      <Counts/>
-      <Announcement/>
-      <Profile/>
-      <Services/>
-      <Article/>
-      <MyFooter/>
+      <section id='beranda'>
+        <Hero/>
+      </section>
+      <section>
+        <Counts/>
+      </section>
+      <section id='pengumuman'>
+        <Announcement/>
+      </section>
+      <section id='profil'>
+        <Profile/>
+      </section>
+      <section id='layanan'>
+        <Services/>
+      </section>
+      <section id='artikel'>
+        <Article/>
+      </section>
+      <section id='kontak'>
+        <MyFooter/>
+      </section>
     </main>
   )
 }

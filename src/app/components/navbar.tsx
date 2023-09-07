@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import {
   Navbar,
@@ -134,7 +135,7 @@ function NavList() {
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
       <Typography
         as="a"
-        href="#"
+        href="#beranda"
         variant="small"
         color="white"
         className="font-normal"
@@ -147,7 +148,7 @@ function NavList() {
       <NavListMenu />
       <Typography
         as="a"
-        href="#"
+        href="#profil"
         variant="small"
         color="white"
         className="font-normal"
@@ -171,7 +172,7 @@ function NavList() {
       </Typography>
       <Typography
         as="a"
-        href="#"
+        href="#kontak"
         variant="small"
         color="white"
         className="font-normal"
@@ -196,7 +197,7 @@ export function MyNavbar() {
   }, []);
  
   return (
-    <Navbar className="rounded-none absolute px-4 py-2 shadow-none z-50" color="transparent">
+    <Navbar className="rounded-none absolute px-4 py-2 shadow-none z-50 border-none bg-hero-100"   >
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="flex">
             {/* <Image alt="logo_koperasi" src="/koperasi_logo.png" width={45} height={30} ></Image> */}

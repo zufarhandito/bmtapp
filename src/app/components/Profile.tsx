@@ -9,7 +9,7 @@ import {
  
 export function Profile() {
   return (
-    <section className="my-36 items-center max-w-4xl mx-auto">
+    <section className="my-36 items-center max-w-4xl mx-auto px-8 lg:px-0">
       <Typography variant="h4">
         Tentang Kami
       </Typography>

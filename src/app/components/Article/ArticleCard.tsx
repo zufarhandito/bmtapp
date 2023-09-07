@@ -15,7 +15,7 @@ type Props = {
 
 export default function ArticleCard({articleData}: Props) {
   return (
-    <Card className="w-full max-w-[48rem] flex-row shadow-none h-36">
+    <Card className="w-full max-w-[48rem] flex-row shadow-none lg:h-36">
       <CardHeader
         shadow={false}
         floated={false}

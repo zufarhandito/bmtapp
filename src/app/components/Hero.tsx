@@ -42,14 +42,14 @@ const section: SectionType[] = [
 
 export default function Hero({}: Props) {
   return (
-    <header className='h-screen flex bg-hero-100 text-white'>
-        <div className='w-1/2 flex flex-col justify-evenly pt-32 pl-20'>
+    <header className='relative min-h-screen flex flex-col lg:flex-row bg-hero-100 text-white'>
+        <div className='w-full lg:w-1/2 flex flex-col justify-evenly pt-32 p-8 lg:pl-20 z-10'>
             <Chip value="KSU BMT Amanah, Galur" variant='ghost' color='blue' className='w-fit text-white font-normal' />
             <Typography variant='h1' className='mb-2'>
                 <span className='text-light-blue-500'>Membantu</span> Anda Membangun <span className='border-b-4 border-light-blue-500'>Usaha</span>
             </Typography>
-            <Typography variant='paragraph'>
-                BMT Amanah Galur merupakan koperasi simpan pinjam <br /> yang berlokasi di Galur, Kulon Progo
+            <Typography variant='paragraph' className='w-full lg:1/2'>
+                BMT Amanah Galur merupakan koperasi simpan pinjam yang berlokasi di Galur, Kulon Progo
             </Typography>
             <div className='mt-10 flex gap-2'>
                 <Button color='blue' className='flex items-center gap-2' variant='gradient'>
@@ -59,10 +59,10 @@ export default function Hero({}: Props) {
             </div>
                 <Counts/>
         </div>
-        <div className='w-1/2 flex items-center justify-center p-20 z-10'>
+        <div className='w-full lg:w-1/2 flex items-center justify-center p-4 lg:p-20 z-10'>
             <MyCarousel/>
         </div>
-        <div className='absolute h-full w-1/2 bg-hero-50 rounded-tl-full right-0 z-0'></div>
+        <div className='absolute h-2/3 lg:h-full w-full lg:w-1/2 bg-hero-50 rounded-tl-full bottom-0 right-0 z-0'></div>
     </header>
   )
 }

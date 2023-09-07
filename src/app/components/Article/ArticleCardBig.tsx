@@ -10,7 +10,7 @@ import {
    
   export function ArticleCardBig() {
     return (
-      <Card className="max-w-[24rem] overflow-hidden ml-auto">
+      <Card className="max-w-[24rem] overflow-hidden">
         <CardHeader
           floated={false}
           shadow={false}

@@ -75,14 +75,14 @@ export default function Article({}: Props) {
         <Typography variant='h4' className='font-extrabold text-center'>
             Publikasi
         </Typography>
-        <Typography className='mx-auto text-center mb-16 max-w-xl'>
+        <Typography className='mx-auto text-center mb-16 max-w-xl px-5 lg:px-0'>
             Lebih dekat dengan BMT Amanah dengan membaca artikel berita dan kegiatan yang dilakukan koperasi
         </Typography>
-        <div className='flex flex-col lg:flex-row gap-10'>
-            <div className='w-2/5'>
+        <div className='flex flex-col lg:flex-row gap-10 px-5'>
+            <div className='lg:w-2/5 mx-auto'>
                 <ArticleCardBig/>
             </div>
-            <div className='w-3/5 flex flex-col justify-between'>
+            <div className='lg:w-3/5 flex flex-col justify-between gap-5 lg:gap-0'>
                 <div className='flex justify-between'>
                     <Typography className='font-bold'>
                         Artikel Terbaru
