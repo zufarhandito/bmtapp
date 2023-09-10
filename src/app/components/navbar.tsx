@@ -1,5 +1,5 @@
-'use client'
-import React from "react";
+'use client';
+import React from 'react';
 import {
   Navbar,
   Collapse,
@@ -12,7 +12,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-} from "@material-tailwind/react";
+} from '@material-tailwind/react';
 import {
   ChevronDownIcon,
   BuildingOffice2Icon,
@@ -26,39 +26,39 @@ import {
   Square3Stack3DIcon,
   PhoneIcon,
   CreditCardIcon,
-} from "@heroicons/react/24/outline";
-import Image from "next/image";
- 
-const colors:any = {
-  blue: "bg-blue-50 text-blue-500",
-  orange: "bg-orange-50 text-orange-500",
-  green: "bg-green-50 text-green-500",
-  "blue-gray": "bg-blue-gray-50 text-blue-gray-500",
-  purple: "bg-purple-50 text-purple-500",
-  teal: "bg-teal-50 text-teal-500",
-  cyan: "bg-cyan-50 text-cyan-500",
-  pink: "bg-pink-50 text-pink-500",
+} from '@heroicons/react/24/outline';
+import Image from 'next/image';
+
+const colors: any = {
+  blue: 'bg-blue-50 text-blue-500',
+  orange: 'bg-orange-50 text-orange-500',
+  green: 'bg-green-50 text-green-500',
+  'blue-gray': 'bg-blue-gray-50 text-blue-gray-500',
+  purple: 'bg-purple-50 text-purple-500',
+  teal: 'bg-teal-50 text-teal-500',
+  cyan: 'bg-cyan-50 text-cyan-500',
+  pink: 'bg-pink-50 text-pink-500',
 };
- 
+
 const navListMenuItems = [
   {
-    color: "blue",
+    color: 'blue',
     icon: FlagIcon,
-    title: "About us",
-    description: "Learn about our story and our mission statement.",
+    title: 'About us',
+    description: 'Learn about our story and our mission statement.',
   },
   {
-    color: "orange",
+    color: 'orange',
     icon: ChatBubbleOvalLeftIcon,
-    title: "Press",
-    description: "News and writings, press releases, and resources",
+    title: 'Press',
+    description: 'News and writings, press releases, and resources',
   },
 ];
- 
+
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
- 
+
   const renderItems = navListMenuItems.map(
     ({ icon, title, description, color }, key) => (
       <a href="#" key={key}>
@@ -66,7 +66,7 @@ function NavListMenu() {
           <div className={`rounded-lg p-5 ${colors[color]}`}>
             {React.createElement(icon, {
               strokeWidth: 2,
-              className: "h-6 w-6",
+              className: 'h-6 w-6',
             })}
           </div>
           <div>
@@ -83,9 +83,9 @@ function NavListMenu() {
           </div>
         </MenuItem>
       </a>
-    )
+    ),
   );
- 
+
   return (
     <React.Fragment>
       <Menu
@@ -107,13 +107,13 @@ function NavListMenu() {
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`hidden h-3 w-3 transition-transform lg:block ${
-                  isMenuOpen ? "rotate-180" : ""
+                  isMenuOpen ? 'rotate-180' : ''
                 }`}
               />
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`block h-3 w-3 transition-transform lg:hidden ${
-                  isMobileMenuOpen ? "rotate-180" : ""
+                  isMobileMenuOpen ? 'rotate-180' : ''
                 }`}
               />
             </ListItem>
@@ -129,13 +129,13 @@ function NavListMenu() {
     </React.Fragment>
   );
 }
- 
+
 function NavList() {
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
       <Typography
         as="a"
-        href="#beranda"
+        href="/#beranda"
         variant="small"
         color="white"
         className="font-normal"
@@ -148,7 +148,7 @@ function NavList() {
       <NavListMenu />
       <Typography
         as="a"
-        href="#profil"
+        href="/#profil"
         variant="small"
         color="white"
         className="font-normal"
@@ -172,7 +172,7 @@ function NavList() {
       </Typography>
       <Typography
         as="a"
-        href="#kontak"
+        href="/#kontak"
         variant="small"
         color="white"
         className="font-normal"
@@ -185,11 +185,11 @@ function NavList() {
     </List>
   );
 }
- 
+
 export function MyNavbar() {
   const [isMobile, setIsMobile] = React.useState(false);
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 960) {
@@ -201,20 +201,22 @@ export function MyNavbar() {
       }
     };
 
-  window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-  return () => {
-    window.removeEventListener("resize", handleResize);
-  };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  console.log(isMobile)
- 
+  console.log(isMobile);
+
   return (
-    <Navbar className="rounded-none absolute px-4 py-2 shadow-none z-50 border-none backdrop-blur-xl lg:backdrop-blur-0 " color="transparent" >
+    <Navbar
+      className="rounded-none absolute px-4 py-2 shadow-none z-50 border-none backdrop-blur-xl lg:backdrop-blur-0 "
+      color="transparent"
+    >
       <div className="flex items-center justify-between text-blue-gray-900">
-        <div className="flex">
-        </div>
+        <div className="flex"></div>
         <div className="hidden lg:block">
           <NavList />
         </div>
