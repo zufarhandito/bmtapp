@@ -82,7 +82,7 @@ export default function Hero({}: Props) {
           }}
         >
           <Typography variant="paragraph" className="w-full lg:1/2">
-            BMT Amanah Galur merupakan koperasi simpan pinjam yang berlokasi di
+            BMT Amanah Galur merupakan koperasi serba usaha yang berlokasi di
             Galur, Kulon Progo
           </Typography>
         </motion.div>

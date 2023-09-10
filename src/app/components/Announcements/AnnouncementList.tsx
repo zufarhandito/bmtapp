@@ -1,10 +1,5 @@
-'use client';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { Button, Typography } from '@material-tailwind/react';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import AnnouncementDrawer from './Announcements/AnnouncementDrawer';
-import AnnouncementCard from './Announcements/AnnouncementCard';
+import React from 'react';
+import AnnouncementCard from './AnnouncementCard';
 
 type Props = {};
 
@@ -15,10 +10,10 @@ type AnnouncementType = {
   desc: string;
 };
 
-const Announcements: AnnouncementType[] = [
+const announcements: AnnouncementType[] = [
   {
     title: 'Tata Cara Pendaftaran Anggota BMT Amanah',
-    isPinned: true,
+    isPinned: false,
     date: '10 Agustus 2023',
     desc: 'Officia sunt ea sunt aliquip sint culpa minim magna cillum nisi. Eiusmod magna laboris exercitation ea eu proident aliqua magna nulla. Anim sint magna occaecat sit exercitation aute deserunt cupidatat eiusmod proident ea deserunt duis. Esse culpa ex ex cillum do anim.',
   },
@@ -38,48 +33,12 @@ const Announcements: AnnouncementType[] = [
   },
 ];
 
-export default function Announcement({}: Props) {
-  const [isOpen, setOpen] = useState(false);
-
-  const handleDrawer = () => {
-    setOpen(!isOpen);
-  };
-
-  // const handleCloseDrawer = () => {
-  //   setOpen(!open)
-  // }
-
-  console.log(isOpen);
-
-  useEffect(() => {}, [isOpen]);
+export default function AnnouncementList({}: Props) {
   return (
-    <section>
-      <AnnouncementDrawer handleDrawer={handleDrawer} isOpen={isOpen} />
-      <article className="flex flex-col gap-3 max-w-3xl mx-auto my-24 px-8 lg:px-0">
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-        >
-          <Typography variant="h4" className="text-center mb-4">
-            Pengumuman
-          </Typography>
-        </motion.div>
-        {Announcements.map((item, index) => (
-          <AnnouncementCard item={item} index={index} />
-        ))}
-        <Button
-          className="w-fit mx-auto my-5"
-          variant="text"
-          onClick={handleDrawer}
-        >
-          Lihat Lainnya
-          <ChevronDownIcon className="w-5 h-5 mx-auto" />
-        </Button>
-      </article>
-    </section>
+    <div className="flex flex-col gap-3">
+      {announcements.map((item, index) => (
+        <AnnouncementCard item={item} index={index} />
+      ))}
+    </div>
   );
 }
