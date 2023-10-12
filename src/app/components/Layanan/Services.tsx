@@ -78,6 +78,7 @@ export default function Services({}: Props) {
       <div className="w-full lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-4">
         {ServicesData.map((item, index) => (
           <motion.div
+            key={index}
             initial={{
               x: 200,
               opacity: 0,

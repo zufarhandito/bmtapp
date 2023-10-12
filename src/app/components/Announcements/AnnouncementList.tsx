@@ -41,7 +41,9 @@ export default function AnnouncementList({}: Props) {
   return (
     <div className="flex flex-col gap-3 text-start">
       {announcements.map((item, index) => (
-        <AnnouncementCard item={item} index={index} />
+        <span key={index}>
+          <AnnouncementCard item={item} index={index} />
+        </span>
       ))}
     </div>
   );

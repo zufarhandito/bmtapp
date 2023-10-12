@@ -74,7 +74,9 @@ export default function Announcement({}: Props) {
         </motion.div>
         {Announcements.map((item, index) => (
           // <button onClick={() => handleModal} className="text-start">
-          <AnnouncementCard item={item} index={index} />
+          <span key={index}>
+            <AnnouncementCard item={item} index={index} />
+          </span>
           // </button>
         ))}
         <Button
