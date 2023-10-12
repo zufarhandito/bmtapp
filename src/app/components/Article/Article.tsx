@@ -4,6 +4,7 @@ import { ArticleCardBig } from './ArticleCardBig';
 import { Button, Typography } from '@material-tailwind/react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 type Props = {};
 
@@ -75,6 +76,7 @@ const articleData: ArticleType[] = [
 ];
 
 export default function Article({}: Props) {
+  const router = useRouter();
   return (
     <article className="max-w-5xl my-32 mx-auto">
       <motion.div
@@ -143,6 +145,7 @@ export default function Article({}: Props) {
             <Button
               variant="text"
               className="flex py-0 items-center gap-2 text-indigo-900"
+              onClick={() => router.push('/articles')}
             >
               Selengkapnya
               <ArrowLongRightIcon className="h-5 w-5" />

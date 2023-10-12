@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import ArticleCategorySection from '../components/Article/ArticlesHouse/ArticleCategorySection';
+import ArticleCard from '../components/Article/ArticleCard';
+import { MyCarousel } from '../components/Carousel';
 
-type Props = {}
+type Props = {};
 
 export default function page({}: Props) {
   return (
-    <div className='bg-hero-100 h-screen'>
-        list
-    </div>
-  )
+    <section className="min-h-screen lg:max-w-5xl mx-auto">
+      <ArticleCategorySection />
+      <MyCarousel />
+      <ArticleCard />
+    </section>
+  );
 }

@@ -1,4 +1,3 @@
-'use client';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { Button, Chip, Typography } from '@material-tailwind/react';
 import React from 'react';

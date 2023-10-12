@@ -40,6 +40,9 @@ const ServicesData: ServiceType[] = [
 ];
 
 export default function Services({}: Props) {
+  const handleOpenModal = () => {
+    console.log('first');
+  };
   return (
     <div className="-z-20 bg-hero-100 px-8 lg:px-40 py-14 relative flex flex-col lg:flex-row gap-14">
       <div className="absolute bg-hero-50 h-80 w-80 start-0 bottom-0 rounded-tr-full -z-10"></div>
@@ -96,9 +99,11 @@ export default function Services({}: Props) {
                   strokeWidth: 2,
                   className: 'h-7 w-7 mb-2 text-indigo-600',
                 })}
-                <Typography variant="h6" className="mb-2">
-                  {item.name}
-                </Typography>
+                <div onClick={handleOpenModal} className="cursor-pointer">
+                  <Typography variant="h6" className="mb-2">
+                    {item.name}
+                  </Typography>
+                </div>
                 <Typography variant="small">{item.desc}</Typography>
               </CardBody>
             </Card>

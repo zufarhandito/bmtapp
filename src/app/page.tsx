@@ -5,12 +5,11 @@ import Counts from './components/Counts';
 import { MyFooter } from './components/Footer';
 import Hero from './components/Hero';
 import { Profile } from './components/Profile';
-import Services from './components/Services';
+import Services from './components/Layanan/Services';
 
 export default function Home() {
   return (
-    <main className=" overflow-hidden">
-      {/* <MyNavbar/> */}
+    <main className="relative overflow-hidden">
       <section id="beranda">
         <Hero />
       </section>
@@ -28,9 +27,6 @@ export default function Home() {
       </section>
       <section id="artikel">
         <Article />
-      </section>
-      <section id="kontak">
-        <MyFooter />
       </section>
     </main>
   );

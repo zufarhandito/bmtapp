@@ -27,7 +27,7 @@ import {
   PhoneIcon,
   CreditCardIcon,
 } from '@heroicons/react/24/outline';
-import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const colors: any = {
   blue: 'bg-blue-50 text-blue-500',
@@ -85,7 +85,7 @@ function NavListMenu() {
       </a>
     ),
   );
-
+  const pathname = usePathname();
   return (
     <React.Fragment>
       <Menu
@@ -98,7 +98,11 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-normal">
             <ListItem
-              className="flex items-center gap-2 py-2 pr-4 text-white hover:bg-opacity-20 hover:text-white"
+              className={`flex items-center gap-2 py-2 pr-4 ${
+                pathname !== '/'
+                  ? ''
+                  : `text-white hover:bg-opacity-20 hover:text-white`
+              }`}
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -131,16 +135,21 @@ function NavListMenu() {
 }
 
 function NavList() {
+  const pathname = usePathname();
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
       <Typography
         as="a"
-        href="/#beranda"
+        href="/"
         variant="small"
-        color="white"
+        color={pathname !== '/' ? 'gray' : 'white'}
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4 hover:bg-opacity-20 hover:text-white">
+        <ListItem
+          className={`flex items-center gap-2 py-2 pr-4 ${
+            pathname !== '/' ? '' : 'hover:bg-opacity-20 hover:text-white'
+          }`}
+        >
           <HomeIcon className="h-[18px] w-[18px]" />
           Beranda
         </ListItem>
@@ -150,10 +159,14 @@ function NavList() {
         as="a"
         href="/#profil"
         variant="small"
-        color="white"
+        color={pathname !== '/' ? 'gray' : 'white'}
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4 hover:bg-opacity-20 hover:text-white">
+        <ListItem
+          className={`flex items-center gap-2 py-2 pr-4 ${
+            pathname !== '/' ? '' : 'hover:bg-opacity-20 hover:text-white'
+          }`}
+        >
           <BuildingOffice2Icon className="h-[18px] w-[18px]" />
           Profil
         </ListItem>
@@ -162,10 +175,14 @@ function NavList() {
         as="a"
         href="#"
         variant="small"
-        color="white"
+        color={pathname !== '/' ? 'gray' : 'white'}
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4 hover:bg-opacity-20 hover:text-white">
+        <ListItem
+          className={`flex items-center gap-2 py-2 pr-4 ${
+            pathname !== '/' ? '' : 'hover:bg-opacity-20 hover:text-white'
+          }`}
+        >
           <NewspaperIcon className="h-[18px] w-[18px]" />
           Publikasi
         </ListItem>
@@ -174,10 +191,14 @@ function NavList() {
         as="a"
         href="/#kontak"
         variant="small"
-        color="white"
+        color={pathname !== '/' ? 'gray' : 'white'}
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4 hover:bg-opacity-20 hover:text-white">
+        <ListItem
+          className={`flex items-center gap-2 py-2 pr-4 ${
+            pathname !== '/' ? '' : 'hover:bg-opacity-20 hover:text-white'
+          }`}
+        >
           <CreditCardIcon className="h-[18px] w-[18px]" />
           Contact
         </ListItem>
@@ -189,7 +210,7 @@ function NavList() {
 export function MyNavbar() {
   const [isMobile, setIsMobile] = React.useState(false);
   const [openNav, setOpenNav] = React.useState(false);
-
+  const pathname = usePathname();
   React.useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 960) {
@@ -208,12 +229,14 @@ export function MyNavbar() {
     };
   }, []);
 
-  console.log(isMobile);
-
   return (
     <Navbar
-      className="rounded-none absolute px-4 py-2 shadow-none z-50 border-none backdrop-blur-xl lg:backdrop-blur-0 "
-      color="transparent"
+      className={`rounded-none ${
+        pathname === '/'
+          ? 'absolute left-1/2 transform -translate-x-1/2'
+          : 'mx-auto'
+      } py-2 shadow-none z-50 border-none backdrop-blur-xl lg:backdrop-blur-0`}
+      color={pathname !== '/' ? 'white' : 'transparent'}
     >
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="flex"></div>
@@ -244,10 +267,10 @@ export function MyNavbar() {
       <Collapse open={openNav}>
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+          <Button variant="outlined" size="sm" color="blue" fullWidth>
             Sign In
           </Button>
-          <Button variant="gradient" size="sm" fullWidth>
+          <Button variant="gradient" size="sm" color="blue" fullWidth>
             Sign Up
           </Button>
         </div>
