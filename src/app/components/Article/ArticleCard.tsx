@@ -3,12 +3,9 @@ import {
   Button,
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Typography,
 } from '@material-tailwind/react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
@@ -40,17 +37,17 @@ export default function ArticleCard({ articleData }: Props) {
         </button>
       </CardHeader>
       <CardBody className="py-0">
-        <a href="/articles">
+        <a href="/articles/1">
           <Typography variant="small" color="gray" className="mb-1">
             startups
           </Typography>
         </a>
-        <a href="/articles">
+        <a href="/articles/1">
           <Typography variant="h5" color="blue-gray" className="mb-1">
             Lyft launching cross-platform service this week
           </Typography>
         </a>
-        <a href="/articles">
+        <a href="/articles/1">
           <Typography color="gray" variant="small" className="mb-8 font-normal">
             Like so many organizations these days, Autodesk is a company in
             transition. It was until recently a traditional boxed software

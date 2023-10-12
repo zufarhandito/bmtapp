@@ -33,7 +33,7 @@ export function ArticleCardBig() {
             UI/UX Review Check
           </Typography>
         </a>
-        <a href="/articles">
+        <a href="/articles/1">
           <Typography
             variant="paragraph"
             color="gray"
