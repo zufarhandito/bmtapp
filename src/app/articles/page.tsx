@@ -1,7 +1,9 @@
 import React from 'react';
-import ArticleCategorySection from '../components/Article/ArticlesHouse/ArticleCategorySection';
-import ArticleCard from '../components/Article/ArticleCard';
-import { MyCarousel } from '../components/Carousel';
+import { MyCarousel } from '../components/Templates/Carousel/Carousel';
+import {
+  ArticleCard,
+  ArticleCategorySection,
+} from '../components/modules/Article';
 
 type Props = {};
 
@@ -10,7 +12,7 @@ export default function page({}: Props) {
     <section className="min-h-screen lg:max-w-5xl mx-auto">
       <ArticleCategorySection />
       <MyCarousel />
-      <ArticleCard />
+      <ArticleCard type="row" />
     </section>
   );
 }

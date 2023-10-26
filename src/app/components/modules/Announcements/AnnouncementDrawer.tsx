@@ -1,7 +1,7 @@
 import { Drawer, Typography, IconButton } from '@material-tailwind/react';
-import AnnouncementList from './AnnouncementList';
+import { Pagination } from '../../Templates';
 import AnnouncementHeader from './AnnouncementHeader';
-import MyPagination from '../Pagination';
+import AnnouncementList from './AnnouncementList';
 
 type Props = {
   handleDrawer: any;
@@ -42,7 +42,7 @@ export default function AnnouncementDrawer({ handleDrawer, isOpen }: Props) {
       <article className="flex flex-col gap-7">
         <AnnouncementHeader />
         <AnnouncementList />
-        <MyPagination />
+        <Pagination />
       </article>
     </Drawer>
   );

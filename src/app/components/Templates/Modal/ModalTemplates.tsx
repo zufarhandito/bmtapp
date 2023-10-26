@@ -1,17 +1,25 @@
-import { XCircleIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { Dialog } from '@material-tailwind/react';
 import Image from 'next/image';
 import React from 'react';
+import { ModalBodyType } from '../types/types';
+import { size } from '@material-tailwind/react/types/components/avatar';
 
 type Props = {
   handleModal: () => void;
   open: boolean;
+  data: ModalBodyType;
+  size: size | undefined;
 };
 
-export default function AnnouncementModal({ handleModal, open }: Props) {
+export default function ModalTemplates({
+  handleModal,
+  open,
+  data,
+  size,
+}: Props) {
   return (
-    <Dialog open={open} handler={handleModal} size="md">
+    <Dialog open={open} handler={handleModal} size={size}>
       <section className="relative">
         <button
           className="absolute p-1 -right-4 -top-4 bg-white rounded-full"
@@ -21,24 +29,20 @@ export default function AnnouncementModal({ handleModal, open }: Props) {
         </button>
         <div className="mx-auto flex justify-center">
           <Image
-            className="w-full rounded-t-xl"
+            className="w-full rounded-t-xl h-[300px] object-cover"
             alt="announcement_image"
-            width={700}
-            height={300}
-            src={'https://picsum.photos/700/300'}
+            width={900}
+            height={500}
+            src={data.image_url}
           />
         </div>
-        <article className="p-10">
+        <article className="p-10 overflow-x-scroll max-h-[450px]">
           <p className="text-xs pb-1">20 September 2023</p>
           <h3 className="text-xl font-bold pb-3">
-            Lorem ipsum dolor sit amet consectetur
+            {data?.title}
+            {/* Lorem ipsum dolor sit amet consectetur */}
           </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
-            fugiat, nam aspernatur qui, soluta in dignissimos quasi sunt eos
-            perspiciatis iste at repellat dolorum dolorem cum doloremque,
-            expedita repudiandae. Quibusdam!
-          </p>
+          <p>{data?.body}</p>
         </article>
       </section>
     </Dialog>

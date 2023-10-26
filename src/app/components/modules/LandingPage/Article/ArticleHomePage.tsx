@@ -1,10 +1,9 @@
 import React from 'react';
-import ArticleCard from './ArticleCard';
-import { ArticleCardBig } from './ArticleCardBig';
 import { Button, Typography } from '@material-tailwind/react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { ArticleCard } from '../../Article';
 
 type Props = {};
 
@@ -75,7 +74,7 @@ const articleData: ArticleType[] = [
   },
 ];
 
-export default function Article({}: Props) {
+export default function ArticleHomePage({}: Props) {
   const router = useRouter();
   return (
     <article className="max-w-5xl my-32 mx-auto">
@@ -121,7 +120,7 @@ export default function Article({}: Props) {
           }}
           className="lg:w-2/5 mx-auto"
         >
-          <ArticleCardBig />
+          <ArticleCard type="col" />
         </motion.div>
         <div className="lg:w-3/5 flex flex-col justify-between gap-5 lg:gap-0">
           <motion.div
@@ -169,7 +168,7 @@ export default function Article({}: Props) {
                 once: true,
               }}
             >
-              <ArticleCard articleData={articleData[index]} />
+              <ArticleCard articleData={articleData[index]} type="col" />
             </motion.span>
           ))}
         </div>

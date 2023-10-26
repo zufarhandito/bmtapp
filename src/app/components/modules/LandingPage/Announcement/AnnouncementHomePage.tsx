@@ -2,10 +2,8 @@
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Button, Typography } from '@material-tailwind/react';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import AnnouncementDrawer from './Announcements/AnnouncementDrawer';
-import AnnouncementCard from './Announcements/AnnouncementCard';
-import AnnouncementModal from './Announcements/AnnouncementModal';
+import { useState } from 'react';
+import { AnnouncementCard, AnnouncementDrawer } from '../../Announcements';
 
 type Props = {};
 
@@ -43,7 +41,7 @@ const Announcements: AnnouncementType[] = [
   },
 ];
 
-export default function Announcement({}: Props) {
+export default function AnnouncementHomePage({}: Props) {
   const [isOpen, setOpen] = useState(false);
 
   const [size, setSize] = useState();

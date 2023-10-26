@@ -25,7 +25,7 @@ const profileData: ProfileDataType[] = [
   },
 ];
 
-export function Profile() {
+export default function Profile() {
   return (
     <section className="mb-36 items-center max-w-4xl mx-auto px-8 lg:px-0">
       <Typography variant="h4">Tentang Kami</Typography>

@@ -207,7 +207,7 @@ function NavList() {
   );
 }
 
-export function MyNavbar() {
+export default function MyNavbar() {
   const [isMobile, setIsMobile] = React.useState(false);
   const [openNav, setOpenNav] = React.useState(false);
   const pathname = usePathname();

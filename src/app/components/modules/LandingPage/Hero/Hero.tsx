@@ -1,7 +1,7 @@
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { Button, Chip, Typography } from '@material-tailwind/react';
 import React from 'react';
-import { MyCarousel } from './Carousel';
+import { MyCarousel } from '../../../Templates/Carousel/Carousel';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 

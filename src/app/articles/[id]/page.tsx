@@ -1,6 +1,6 @@
 'use client';
-import { ArticleCardBig } from '@/app/components/Article/ArticleCardBig';
-import NavigationBack from '@/app/components/Public/NavigationBack';
+import { NavigationBack } from '@/app/components/Templates';
+import { ArticleCard } from '@/app/components/modules/Article';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { Typography } from '@material-tailwind/react';
 import Image from 'next/image';
@@ -97,9 +97,9 @@ export default function page({}: Props) {
             Related Articles
           </Typography>
           <div className="md:flex gap-10 ">
-            <ArticleCardBig />
-            <ArticleCardBig />
-            <ArticleCardBig />
+            <ArticleCard type="col" />
+            <ArticleCard type="col" />
+            <ArticleCard type="col" />
           </div>
         </div>
       </article>
