@@ -1,6 +1,6 @@
 'use client';
-import { NavigationBack } from '@/app/components/Templates';
-import { ArticleCard } from '@/app/components/modules/Article';
+import { NavigationBack } from '../../../components/Templates';
+import { ArticleCard } from '../../../components/modules/Article';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { Typography } from '@material-tailwind/react';
 import Image from 'next/image';

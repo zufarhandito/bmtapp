@@ -168,7 +168,7 @@ export default function ArticleHomePage({}: Props) {
                 once: true,
               }}
             >
-              <ArticleCard articleData={articleData[index]} type="col" />
+              <ArticleCard articleData={articleData[index]} type="row" />
             </motion.span>
           ))}
         </div>

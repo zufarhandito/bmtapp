@@ -30,7 +30,7 @@ const categories: CategoryType[] = [
 
 export default function ArticleCategorySection({}: Props) {
   return (
-    <aside className="bg-red-100">
+    <aside className="">
       {categories.map((item: CategoryType, index: number) => {
         return (
           <li key={index}>

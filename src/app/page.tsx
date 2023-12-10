@@ -1,21 +1,17 @@
 'use client';
-import Counts from './components/Counts';
 import {
   AnnouncementHomePage,
   ArticleHomePage,
   Hero,
   Profile,
   ServicesHomePage,
-} from './components/modules/LandingPage';
+} from '../components/modules/LandingPage';
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden">
       <section id="beranda">
         <Hero />
-      </section>
-      <section>
-        <Counts />
       </section>
       <section id="pengumuman">
         <AnnouncementHomePage />

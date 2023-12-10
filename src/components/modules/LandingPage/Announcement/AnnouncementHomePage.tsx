@@ -44,19 +44,13 @@ const Announcements: AnnouncementType[] = [
 export default function AnnouncementHomePage({}: Props) {
   const [isOpen, setOpen] = useState(false);
 
-  const [size, setSize] = useState();
-
   const handleDrawer = () => {
     setOpen(!isOpen);
   };
 
-  // const handleModal = (value: string) => {
-  //   setSize(value);
-  // };
   return (
     <section>
       <AnnouncementDrawer handleDrawer={handleDrawer} isOpen={isOpen} />
-      {/* <AnnouncementModal handleModal={handleModal} size={size} /> */}
       <article className="flex flex-col gap-3 max-w-3xl mx-auto my-24 px-8 lg:px-0">
         <motion.div
           initial={{

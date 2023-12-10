@@ -9,14 +9,14 @@ type Props = {
   handleModal: () => void;
   open: boolean;
   data: ModalBodyType;
-  size: size | undefined;
+  size?: size | undefined;
 };
 
 export default function ModalTemplates({
   handleModal,
   open,
   data,
-  size,
+  size = 'lg',
 }: Props) {
   return (
     <Dialog open={open} handler={handleModal} size={size}>

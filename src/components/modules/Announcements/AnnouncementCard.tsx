@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { PaperClipIcon } from '@heroicons/react/24/solid';
 import { Typography } from '@material-tailwind/react';
 import Image from 'next/image';
 import { Modal } from '../../Templates';
+import useDialog from '../../../../hooks/useDialog';
 
 type Props = {
   item: {
@@ -17,10 +18,8 @@ type Props = {
 };
 
 export default function AnnouncementCard({ item, index }: Props) {
-  const [openModal, setOpenModal] = useState(false);
-  const handleOpenModal = () => {
-    setOpenModal(!openModal);
-  };
+  const { isOpen, handleDialog } = useDialog();
+
   return (
     <>
       <motion.div
@@ -51,7 +50,7 @@ export default function AnnouncementCard({ item, index }: Props) {
           />
         </div>
         <div className="flex flex-col">
-          <div onClick={handleOpenModal} className="cursor-pointer">
+          <div onClick={handleDialog} className="cursor-pointer">
             <Typography
               variant="small"
               className="text-blue-gray-600 text-start"
@@ -59,7 +58,7 @@ export default function AnnouncementCard({ item, index }: Props) {
               {item.date}
             </Typography>
           </div>
-          <div onClick={handleOpenModal} className="cursor-pointer">
+          <div onClick={handleDialog} className="cursor-pointer">
             <Typography variant="h6" className="font-semibold">
               {item.title}
             </Typography>
@@ -75,8 +74,8 @@ export default function AnnouncementCard({ item, index }: Props) {
         )}
       </motion.div>
       <Modal
-        open={openModal}
-        handleModal={handleOpenModal}
+        open={isOpen}
+        handleModal={handleDialog}
         size="lg"
         data={{
           title: 'Consequat adipisicing nostrud esse deserunt enim',
